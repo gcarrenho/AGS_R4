@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+            <LinearLayout
+                android:id="@+id/cuadronomlug"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_nombre_lugar"
+                    android:layout_width="124dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombre_lugar" />
+
+                <EditText
+                    android:id="@+id/textNomLugar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textColor="@color/color_black"
+                    android:hint="@string/nombre_lugar" >
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/editarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+            <LinearLayout
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_cat_lugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cat_lugar" />
+
+                <EditText
+                    android:id="@+id/textTipoLugar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tipo_lugar"
+                    android:textColor="@color/color_black"
+                    android:ems="10" />
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+            <LinearLayout
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_tel_lugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tel_lugar" />
+
+                <EditText
+                    android:id="@+id/textTelLugar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tel_lugar"
+                    android:inputType="phone"
+                    android:textColor="@color/color_black"
+                    android:ems="10" />
+
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/aceptarButtom"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="0.40"
+            android:text="@string/aceptar" />
+
+        <Button
+            android:id="@+id/cancelarButtom"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="0.40"
+            android:text="@string/cancelar" />
+
+    </LinearLayout>
+</LinearLayout>

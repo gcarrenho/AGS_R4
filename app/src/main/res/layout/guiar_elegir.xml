@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.07" >
+
+        <TableRow
+            android:id="@+id/editarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="15dp">
+
+            <LinearLayout android:id="@+id/BusButtom" android:background="@drawable/box_free_simple" android:orientation="vertical" android:clickable="true"
+                android:layout_weight="3" android:layout_height="175dp" android:focusable="true">
+                <ImageView
+                    android:src="@drawable/busess" android:scaleType="center" android:layout_gravity="center"
+                    android:layout_weight="1" android:layout_width="wrap_content" android:layout_height="0dp"/>
+                <LinearLayout  android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center">
+                    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal|top" android:textSize="18sp"
+                        android:text="@string/colectivo" android:typeface="serif" android:textColor="#000000"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:id="@+id/pieButtom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/apieButton"
+                android:layout_height="175dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:src="@drawable/apie" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|top"
+                        android:text="@string/a_Pie"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:typeface="serif" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

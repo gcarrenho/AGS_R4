@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.AccessibleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    class="net.AccessibleLayout"
+    android:background="@drawable/background" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" >
+
+            <LinearLayout
+                android:id="@+id/Headliner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/status_bar"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/AppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/app_name"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:typeface="serif" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" >
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp" >
+
+                <LinearLayout
+                    android:id="@+id/guiaButton"
+                    android:layout_height="175dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/bg_leftr"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        android:src="@drawable/guia_t" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|top"
+                            android:text="@string/guiar_Button"
+                            android:textColor="#000000"
+                            android:textSize="17sp"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:id="@+id/abmButton"
+                    android:layout_height="175dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/bg_rightr"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        android:src="@drawable/lugar1" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|top"
+                            android:text="@string/abm_button"
+                            android:textColor="#000000"
+                            android:textSize="17sp"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp" >
+
+                <LinearLayout
+                    android:id="@+id/salirButton"
+                    android:layout_height="175dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/bg_leftr"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        android:src="@drawable/salir" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|top"
+                            android:text="@string/salir_Button"
+                            android:textColor="#000000"
+                            android:textSize="17sp"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:id="@+id/informButton"
+                    android:layout_height="175dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/bg_rightr"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:scaleType="center"
+                        android:src="@drawable/information" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|top"
+                            android:text="@string/information_Button"
+                            android:textColor="#000000"
+                            android:textSize="17sp"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/LlamadaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_free_simple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="200dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:text="@string/real_llamada"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    android:typeface="serif" />
+
+            </LinearLayout>
+        </TableLayout>
+
+    </LinearLayout>
+
+</net.AccessibleLayout>

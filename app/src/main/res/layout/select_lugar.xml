@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05" >
+
+        <TableRow
+            android:id="@+id/editarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" >
+
+            <LinearLayout
+                android:id="@+id/button_lugar_cargado"
+                android:layout_height="120dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3.13"
+                    android:scaleType="center"
+                    android:src="@drawable/lugar_icon" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|top"
+                        android:text="@string/lugar_cargado"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:typeface="serif" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rowbusclugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" >
+
+            <LinearLayout
+                android:id="@+id/button_buscar_por_direc"
+                android:layout_height="120dp"
+                android:layout_weight="2"
+                android:background="@drawable/box_free_simple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.15"
+                    android:scaleType="center"
+                    android:src="@drawable/mapa" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|top"
+                        android:text="@string/buscar_direccion"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:typeface="serif" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

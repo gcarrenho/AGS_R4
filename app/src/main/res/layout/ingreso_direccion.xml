@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:id="@+id/ingreso_dir_layout">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+            <LinearLayout
+                android:id="@+id/cuadrocalleyaltura"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_calle_altura"
+                    android:layout_width="124dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/direccion" />
+
+                <EditText
+                    android:id="@+id/textCalleyAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textColor="@color/color_black"
+                    android:hint="@string/direccion" >
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/campoCiudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+            <LinearLayout
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_ciudad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ciudad" />
+
+                <EditText
+                    android:id="@+id/textCiudad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/ciudad"
+                    android:textColor="@color/color_black"
+                    android:ems="10" />
+
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="15dp" >
+
+            <LinearLayout
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_provincia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/provincia" />
+
+                <EditText
+                    android:id="@+id/textProvincia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/provincia"
+                    android:ems="10"
+                    android:textColor="@color/color_black"/>
+
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/aceptarButtom"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="0.40"
+            android:text="@string/aceptar"
+            android:onClick="showLocation" />
+
+        <Button
+            android:id="@+id/cancelarButtom"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="0.40"
+            android:text="@string/cancelar" />
+
+    </LinearLayout>
+</LinearLayout>

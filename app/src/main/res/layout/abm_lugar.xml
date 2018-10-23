@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/cargarButton"
+                android:layout_height="150dp"
+                android:layout_weight="3"
+                android:background="@drawable/box_free_simple"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="157dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.85"
+                    android:scaleType="center"
+                    android:src="@drawable/addplace" />
+
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal|top" android:textSize="18sp"
+                    android:text="@string/cargar" android:typeface="serif" android:textColor="#000000"/>
+
+            </LinearLayout>
+
+        </TableRow>
+
+           <TableRow
+               android:id="@+id/tableRow2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" >
+
+               <LinearLayout
+                   android:id="@+id/editarButton"
+                   android:layout_height="150dp"
+                   android:layout_weight="3"
+                   android:background="@drawable/box_free_simple"
+                   android:clickable="true"
+                   android:focusable="true"
+                   android:orientation="vertical">
+
+                   <ImageView
+                       android:layout_width="157dp"
+                       android:layout_height="0dp"
+                       android:layout_gravity="center"
+                       android:layout_weight="0.85"
+                       android:scaleType="center"
+                       android:src="@drawable/modify" />
+                   <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+                       android:layout_gravity="center_horizontal|top" android:textSize="18sp"
+                       android:text="@string/editar" android:typeface="serif" android:textColor="#000000"/>
+
+               </LinearLayout>
+
+           </TableRow>
+
+           <TableRow
+               android:id="@+id/tableRow3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" >
+
+               <LinearLayout
+                   android:id="@+id/eliminarButton"
+                   android:layout_height="150dp"
+                   android:layout_weight="3"
+                   android:background="@drawable/box_free_simple"
+                   android:clickable="true"
+                   android:focusable="true"
+                   android:orientation="vertical"
+                   >
+
+                   <ImageView
+                       android:layout_width="157dp"
+                       android:layout_height="0dp"
+                       android:layout_gravity="center"
+                       android:layout_weight="0.85"
+                       android:scaleType="center"
+                       android:src="@drawable/delete" />
+                   <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+                       android:layout_gravity="center_horizontal|top" android:textSize="18sp"
+                       android:text="@string/eliminar" android:typeface="serif" android:textColor="#000000"/>
+               </LinearLayout>
+
+           </TableRow>
+
+    </TableLayout>
+</LinearLayout>

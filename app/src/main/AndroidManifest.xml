@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tesis.ags_r4">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission
+        android:name="com.tesis.ags_r4.maps.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.tesis.ags_r4.activity.MainMenuActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AbmActivity"
+            android:screenOrientation="portrait"
+            android:label="Menú de Lugares" >
+        </activity>
+        <activity
+            android:name=".activity.CargarActivity"
+            android:screenOrientation="portrait"
+            android:label="Cargar Lugar" >
+        </activity>
+        <activity
+            android:name=".activity.EditarActivity"
+            android:screenOrientation="portrait"
+            android:label="Editar Lugar" >
+        </activity>
+        <activity
+            android:name=".activity.EliminarActivity"
+            android:screenOrientation="portrait"
+            android:label="Eliminar Lugar" >
+        </activity>
+        <activity
+            android:name=".activity.SelectCatActivity"
+            android:screenOrientation="portrait"
+            android:label="Seleccionar Lugar" >
+        </activity>
+
+        <activity android:name="com.tesis.ags_r4.GuiarMapa"
+            android:screenOrientation="portrait"
+            android:label="Mapa de Guiado" >
+        </activity>
+        <activity android:name=".activity.InfActivity"
+            android:screenOrientation="portrait"
+            android:label="Información"
+            ></activity>
+        <activity android:name=".activity.SelecCityActivity"
+            android:screenOrientation="portrait"
+            android:label="Seleccionar Ciudad"
+            ></activity>
+        <activity android:name=".activity.AdminContactActivity"
+            android:screenOrientation="portrait"
+            android:label="Administrar Contacto"
+            ></activity>
+        <activity android:name=".activity.AdminActivity"
+            android:screenOrientation="portrait"
+            android:label="Configuracion"
+            ></activity>
+        <activity android:name=".activity.MakeCallActivity"
+            android:screenOrientation="portrait"
+            android:label="Hacer una Llamada"
+            ></activity>
+        <activity android:name=".activity.SeleccionGuiado"
+            android:screenOrientation="portrait"
+            android:label="Seleccionar el Guiado"
+            ></activity>
+        <activity android:name=".activity.GuiarPorDireccion"
+            android:screenOrientation="portrait"
+            android:label="Cargar Dirección"
+            android:theme="@style/Theme.AppCompat"
+            ></activity>
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.tesis.ags_r4.MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+    </application>
+
+</manifest>
