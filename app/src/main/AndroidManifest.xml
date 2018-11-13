@@ -45,16 +45,6 @@
             android:label="Cargar Lugar" >
         </activity>
         <activity
-            android:name=".activity.EditarActivity"
-            android:screenOrientation="portrait"
-            android:label="Editar Lugar" >
-        </activity>
-        <activity
-            android:name=".activity.EliminarActivity"
-            android:screenOrientation="portrait"
-            android:label="Eliminar Lugar" >
-        </activity>
-        <activity
             android:name=".activity.SelectCatActivity"
             android:screenOrientation="portrait"
             android:label="Seleccionar Lugar" >

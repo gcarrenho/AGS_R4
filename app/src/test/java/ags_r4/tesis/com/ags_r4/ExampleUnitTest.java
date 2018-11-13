@@ -2,6 +2,7 @@ package ags_r4.tesis.com.ags_r4;
 
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.*;
 
 /**

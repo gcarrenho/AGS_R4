@@ -37,7 +37,7 @@ public class AbmActivity extends Activity implements Preference.OnPreferenceClic
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.abm_lugar);
-        Toast.makeText(getBaseContext(), "Para volver al menú presione el botón atrás del teléfono", Toast.LENGTH_LONG)
+        Toast.makeText(getBaseContext(), getResources().getString(R.string.volver), Toast.LENGTH_LONG)
                 .show();
         about = new Preference(this);
         about.setOnPreferenceClickListener(this);

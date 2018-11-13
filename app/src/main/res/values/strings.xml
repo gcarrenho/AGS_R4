@@ -28,6 +28,8 @@
     <string name="editar">Editar</string>
     <string name="visitar">Visitar</string>
     <string name="llamar">Llamar</string>
+    <string name="llamar_a">Llamar a </string>
+    <string name="llamando_a">Llamando a </string>
     <string name="ayuda">Ayuda</string>
     <string name="lugar_salud_categoria">Salud</string>
     <string name="lugar_tramites_categoria">Tramites</string>
@@ -66,7 +68,28 @@
     <string name="llamada_lugar">Llamada a un Lugar Cargado</string>
     <string name="lugar_cargado">Lugar Cargado</string>
     <string name="buscar_direccion">Buscar por Dirección</string>
-    <string name="volver_menu">Para volver al menú, presione el boton atrás del teléfono</string>
+    <string name="volver">Para volver, presione el boton atrás del teléfono</string>
+    <string name="necesita_permisos">Necesitas otorgar permisos para </string>
+    <string name="internet">Internet </string>
+    <string name="escribir_en_memoria">Escribir en memoria </string>
+    <string name="acceso_localizacion">Acceso a localización </string>
+    <string name="save_data">Los datos fueron grabados correctamente</string>
+    <string name="edit_datos">Datos editados correctamente</string>
+    <string name="accion_cancelar">Acción Cancelada</string>
+    <string name="gps_desactivado">GPS Desactivado</string>
+    <string name="repito">Repito</string>
+    <string name="no_intrucciones">No hay intrucciones</string>
+    <string name="parada_colectivo">Se Encuentra Muy Próximo a la Parada de Colectivo.</string>
+    <string name="destino">Se Encuentra Muy Próximo al Destino.</string>
+    <string name="recorrido_fin">Recorrido Finalizado</string>
+    <string name="leer_contactos">Leer Contactos</string>
+    <string name="permiso_denegado">Algun permiso fue denegado</string>
+    <string name="permiso_exitoso">Permisos exitosos</string>
+    <string name="no_contactos"> No hay contacto guardado, dirijase a configuración para su carga</string>
+    <string name="no_ubicado"> No se ha Podidio Encontrar, Compruebe la Busqueda y/o Conectividad</string>
+
+
+
 
 
 

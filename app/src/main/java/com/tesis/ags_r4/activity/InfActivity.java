@@ -34,7 +34,7 @@ public class InfActivity extends Activity{
 		Intent intent = getIntent();
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.informacion);
-		Toast.makeText(getBaseContext(), "Para volver al menú presione el botón atrás del teléfono", Toast.LENGTH_LONG)
+		Toast.makeText(getBaseContext(), getResources().getString(R.string.volver), Toast.LENGTH_LONG)
 		.show();
 		Window window = getWindow();
 		final Activity activity = this;
@@ -44,7 +44,7 @@ public class InfActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				findDirections(0.2563,0.25369,0.89658,0.7895,"walking");
-				Toast.makeText(getBaseContext(), "Los datos fueron grabados correctamente",
+				Toast.makeText(getBaseContext(), getResources().getString(R.string.save_data),
 						Toast.LENGTH_SHORT).show();
 			}
 		});

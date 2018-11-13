@@ -41,7 +41,7 @@ public class MakeCallActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		
 		setContentView(R.layout.activity_llamadas);
-		Toast.makeText(getBaseContext(), "Para volver al menú presione el botón atrás del teléfono", Toast.LENGTH_LONG)
+		Toast.makeText(getBaseContext(), getResources().getString(R.string.volver), Toast.LENGTH_LONG)
 		.show();
 		
 		View buttonEmer = (View) window.findViewById(R.id.button_emer);		
@@ -52,12 +52,12 @@ public class MakeCallActivity extends Activity {
 
 				listContact=contact.getAllContact();
 				if(listContact.isEmpty()){
-					Toast.makeText(getBaseContext(), "No hay contacto guardado, dirijase a configuración para su carga", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(), getResources().getString(R.string.no_contactos), Toast.LENGTH_LONG)
 					.show();
 				}else{
 					String lname=listContact.get(0).getLastname();
 					String tel=listContact.get(0).getTel();
-					Toast.makeText(getBaseContext(), "Llamando a "+lname.toString(), Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(), getResources().getString(R.string.llamar_a)+lname.toString(), Toast.LENGTH_LONG)
 					.show();
 
 					Intent call = new Intent(android.content.Intent.ACTION_CALL,Uri.parse("tel:"+tel)); 

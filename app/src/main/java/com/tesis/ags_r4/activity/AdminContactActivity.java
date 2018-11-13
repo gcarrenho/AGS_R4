@@ -29,7 +29,7 @@ public class AdminContactActivity extends Activity{
 				exit = true;
 			}
 		}
-		Toast.makeText(getBaseContext(), "Para volver a configuración presione el botón atrás del teléfono", Toast.LENGTH_LONG)
+		Toast.makeText(getBaseContext(), getResources().getString(R.string.volver), Toast.LENGTH_LONG)
 		.show();
 		Window window = getWindow();
 		final Activity activity = this;

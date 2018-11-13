@@ -191,7 +191,7 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 
 		if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
 		{
-			Toast.makeText(getBaseContext(), "GPS DESACTIVADO", Toast.LENGTH_LONG)
+			Toast.makeText(getBaseContext(), getResources().getString(R.string.gps_desactivado), Toast.LENGTH_LONG)
 			.show(); 
 			Intent settingsIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 			settingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
@@ -409,7 +409,7 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		fixListInst(inst);
 		Toast.makeText(getBaseContext(),textInst, Toast.LENGTH_LONG)
 		.show();
-		Toast.makeText(getBaseContext(),"Repito "+textInst, Toast.LENGTH_LONG)
+		Toast.makeText(getBaseContext(),getResources().getString(R.string.repito)+textInst, Toast.LENGTH_LONG)
 		.show();
 	}
 
@@ -419,18 +419,18 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 	// y cuando este a 200m del lugar avisar q se baje(cuando esta arriba del lugar) informar calles
 	public void setLocation(Location loc) {
 		if(inst.isEmpty()){
-			Toast.makeText(getBaseContext(), "No hay Instrucciones", Toast.LENGTH_LONG)
+			Toast.makeText(getBaseContext(), getResources().getString(R.string.no_intrucciones), Toast.LENGTH_LONG)
 			.show();
 		}else if(inst.size()-1==0){
 
 			if(colec==1){
 				if(cartel==1){
-					Toast.makeText(getBaseContext(),"Se Encuentra Muy Próximo a la Parada de Colectivo.", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.parada_colectivo), Toast.LENGTH_LONG)
 					.show();
 					cartel=0;
 				}
 				if(this.dist(loc.getLatitude(), loc.getLongitude(),latDest,lngDest)>60 && this.dist(loc.getLatitude(), loc.getLongitude(),latDest,lngDest)<=200){
-					Toast.makeText(getBaseContext(),"Debería Tocar el Timbre para descender del Transporte", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.toc_timbre), Toast.LENGTH_LONG)
 					.show();
 				}else if (this.dist(loc.getLatitude(), loc.getLongitude(),latDest,lngDest)<=60){
 					//recalcular la ruta
@@ -446,17 +446,17 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 
 					//Obtener la direccion de la calle a partir de la latitud y la longitud 
 					if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
-						Toast.makeText(getBaseContext(),"Usted se Encuentra en "+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
+						Toast.makeText(getBaseContext(),getResources().getString(R.string.ubic)+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
 						.show();
 					}
 				}
 			}else{
 				if(cartel==1){
-					Toast.makeText(getBaseContext(),"Se Encuentra Muy Próximo al Destino.", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.destino), Toast.LENGTH_LONG)
 					.show();
 					cartel=0;
 				}else{
-					Toast.makeText(getBaseContext(),"Recorrido Finalizado", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.recorrido_fin), Toast.LENGTH_LONG)
 					.show();
 				}
 			}	
@@ -467,7 +467,7 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 					//digo que hay que hacer
 					Toast.makeText(getBaseContext(), inst.get(l).getInstruction(), Toast.LENGTH_LONG)
 					.show();
-					Toast.makeText(getBaseContext(),"Repito "+ inst.get(l).getInstruction(), Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.repito)+ inst.get(l).getInstruction(), Toast.LENGTH_LONG)
 					.show();
 					//y a lat y lng le doy el siguiente de la lista
 					/*Toast.makeText(getBaseContext(),"En este momento esta a 20 metros del proximo punto ", Toast.LENGTH_LONG)
@@ -478,12 +478,12 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 					//Me fijo si se saltio algun punto y esta cerca del destino
 					if(this.dist(loc.getLatitude(), loc.getLongitude(),Double.parseDouble(inst.get(inst.size()-1).getLat()),Double.parseDouble(inst.get(inst.size()-1).getLng()))<=20.00){
 						if(colec==1 && llegoDest==0){
-							Toast.makeText(getBaseContext(),"Se Encuentra Muy Próximo a la parada de colectivo.", Toast.LENGTH_LONG)
+							Toast.makeText(getBaseContext(),getResources().getString(R.string.parada_colectivo), Toast.LENGTH_LONG)
 							.show();
 							stop=1;
 							l=inst.size();
 						}else{
-							Toast.makeText(getBaseContext(),"Se Encuentra Muy Próximo al destino. Recorrido Finalizado.", Toast.LENGTH_LONG)
+							Toast.makeText(getBaseContext(),getResources().getString(R.string.dest_prox)+" "+getResources().getString(R.string.recorrido_fin), Toast.LENGTH_LONG)
 							.show();
 						}
 						
@@ -494,14 +494,14 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 
 						//Obtener la direccion de la calle a partir de la latitud y la longitud 
 						if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
-							Toast.makeText(getBaseContext(),"Usted se Encuentra en "+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
+							Toast.makeText(getBaseContext(),getResources().getString(R.string.se_encuentra)+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
 							.show();
 						}
 					}
 				}
 			}else if(inst.size()==l && stop==0){
 				if(this.dist(loc.getLatitude(), loc.getLongitude(),Double.parseDouble(inst.get(inst.size()-1).getLat()),Double.parseDouble(inst.get(inst.size()-1).getLng()))<=20.00){
-					Toast.makeText(getBaseContext(),"Se Encuentra Muy Próximo al Destino.", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.dest_prox), Toast.LENGTH_LONG)
 					.show();
 					stop=1;
 				}else{
@@ -510,13 +510,13 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 
 					//Obtener la direccion de la calle a partir de la latitud y la longitud 
 					if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
-						Toast.makeText(getBaseContext(),"Usted se Encuentra en "+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
+						Toast.makeText(getBaseContext(),getResources().getString(R.string.se_encuentra)+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
 						.show();
 					}
 				}
 			}else if(inst.size()==l && stop==1 && llegoDest==0 && colec==1){
 				if(this.dist(loc.getLatitude(), loc.getLongitude(),latDest,lngDest)>60 && this.dist(loc.getLatitude(), loc.getLongitude(),latDest,lngDest)<=280){
-					Toast.makeText(getBaseContext(),"Debería Tocar el Timbre para descender del Transporte", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.toc_timbre), Toast.LENGTH_LONG)
 					.show();
 				}else if (this.dist(loc.getLatitude(), loc.getLongitude(),latDest,lngDest)<=60){
 					//recalcular la ruta
@@ -533,14 +533,14 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 
 					//Obtener la direccion de la calle a partir de la latitud y la longitud 
 					if (loc.getLatitude() != 0.0 && loc.getLongitude() != 0.0) {
-						Toast.makeText(getBaseContext(),"Usted se Encuentra en "+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
+						Toast.makeText(getBaseContext(),getResources().getString(R.string.se_encuentra)+this.CurrentLocation(loc.getLatitude(), loc.getLongitude()), Toast.LENGTH_LONG)
 						.show();
 						
 					}
 				}
 			}else if(inst.size()<=l && stop==1 && llegoDest==1){
 				if (this.dist(loc.getLatitude(), loc.getLongitude(),lat,lng)<=30){
-					Toast.makeText(getBaseContext(),"Se Encuentra Muy Próximo al destino deseado. Recorrido Finalizado.", Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(),getResources().getString(R.string.dest_prox)+" "+getResources().getString(R.string.recorrido_fin), Toast.LENGTH_LONG)
 					.show();
 				}
 			}
@@ -682,9 +682,9 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		int i=0; 
 		while(i<inst.size()){
 			if(Integer.parseInt(inst.get(i).getDistance())<1000){
-				inst.get(i).setDistance(inst.get(i).getDistance()+" Metros, o "+Math.round(Integer.parseInt(inst.get(i).getDistance())/0.6) +" Pasos ");
+				inst.get(i).setDistance(inst.get(i).getDistance()+getResources().getString(R.string.metros)+Math.round(Integer.parseInt(inst.get(i).getDistance())/0.6) +getResources().getString(R.string.pasos));
 			}else{
-				inst.get(i).setDistance(Math.round(Integer.parseInt(inst.get(i).getDistance())/1000)+" Kilometros, o "+Math.round(Integer.parseInt(inst.get(i).getDistance())/1000/0.6) +" Pasos ");
+				inst.get(i).setDistance(Math.round(Integer.parseInt(inst.get(i).getDistance())/1000)+getResources().getString(R.string.kilom)+Math.round(Integer.parseInt(inst.get(i).getDistance())/1000/0.6) +getResources().getString(R.string.pasos));
 			}
 			int j=0;
 			String instruc=inst.get(i).getInstruction();

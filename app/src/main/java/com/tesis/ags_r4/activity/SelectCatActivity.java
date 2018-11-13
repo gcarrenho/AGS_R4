@@ -31,10 +31,8 @@ import com.tesis.ags_r4.R;
 public class SelectCatActivity extends Activity {
 
 	private Map<String, List<String>> collLugares;
-	List<String> listCat, listCity;
-	List<String> listLugares;
+	List<String> listCat;
 	private ExpandableListView expListView;
-	private ListView listViewCity;
 	private Lugar lugarBd;
 	private List<Lugar> l, placeWithTel;
 
@@ -72,7 +70,7 @@ public class SelectCatActivity extends Activity {
 
 		setContentView(R.layout.list_cat);
 		createListCat();
-		if (boton.equalsIgnoreCase("llamar")) {
+		if (boton.equalsIgnoreCase(getResources().getString(R.string.llamar))) {
 			placeWithTel = lugarBd.getAllPlaceTel(ciudad);
 			createCollecctionLugaresByTel();
 		} else {
@@ -102,7 +100,7 @@ public class SelectCatActivity extends Activity {
 
 					Lugar l = lugarBd.getLugar(nombre, ciudad);
 
-					Toast.makeText(getBaseContext(), "Llamando a " + l.getNombre(), Toast.LENGTH_LONG)
+					Toast.makeText(getBaseContext(), getResources().getString(R.string.llamando_a)+ l.getNombre(), Toast.LENGTH_LONG)
 							.show();
 					//AGREGAR PERMISOS DE LLAMADA
 					final Intent call = new Intent(android.content.Intent.ACTION_CALL, Uri.parse("tel:" + l.getTelefono()));
@@ -207,7 +205,7 @@ public class SelectCatActivity extends Activity {
 			});	
 		}else{//el boton es para guiar
 			if(l.isEmpty()){
-				Toast.makeText(getBaseContext(),R.string.no_lugar, Toast.LENGTH_LONG)
+				Toast.makeText(getBaseContext(),getResources().getString(R.string.no_lugar), Toast.LENGTH_LONG)
 				.show();
 			}
 			expListView.setOnChildClickListener(new OnChildClickListener() {
@@ -292,7 +290,7 @@ public class SelectCatActivity extends Activity {
 		// Comprobamos si el resultado de la segunda actividad es "RESULT_CANCELED".
 		if (resultCode == RESULT_CANCELED) {
 			// Si es así mostramos mensaje de cancelado por pantalla.
-			Toast.makeText(this, "Accion Cancelada", Toast.LENGTH_SHORT)
+			Toast.makeText(this, getResources().getString(R.string.accion_cancelar), Toast.LENGTH_SHORT)
 			.show();
 		} else {
 			// De lo contrario, recogemos el resultado de la segunda actividad.
@@ -302,7 +300,7 @@ public class SelectCatActivity extends Activity {
 			lugarBd.open();
 			this.actualizarLista();
 			lugarBd.close();
-			Toast.makeText(getBaseContext(),"Lugar Editado Correctamente", Toast.LENGTH_LONG)
+			Toast.makeText(getBaseContext(),getResources().getString(R.string.edit_datos), Toast.LENGTH_LONG)
 			.show();
 			this.finish();
 		}

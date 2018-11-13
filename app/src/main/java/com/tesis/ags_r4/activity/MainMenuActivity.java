@@ -132,9 +132,6 @@ public class MainMenuActivity extends Activity {
 				//ESCRIBIR DIRECCION
 				final Intent selectGuiado = new Intent(activity, AgsIntents.getSeleccionGuiado());
 				activity.startActivity(selectGuiado);
-				/*final Intent guiar = new Intent(activity, AgsIntents.getSelecCityActivity());
-				guiar.putExtra("boton", "guiar");
-				activity.startActivity(guiar);*/
 				
 			}
 		});
@@ -234,7 +231,7 @@ public class MainMenuActivity extends Activity {
 		if (permissionsList.size() > 0) {
 			if (permissionsNeeded.size() > 0) {
 				// Need Rationale
-				String message = "Necesitas otorgar permisos para " + permissionsNeeded.get(0);
+				String message = getResources().getString(R.string.necesita_permisos) + permissionsNeeded.get(0);
 				for (int i = 1; i < permissionsNeeded.size(); i++)
 					message = message + ", " + permissionsNeeded.get(i);
 				showMessageOKCancel(message,
@@ -285,8 +282,8 @@ public class MainMenuActivity extends Activity {
 	private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
 		new AlertDialog.Builder(MainMenuActivity.this)
 				.setMessage(message)
-				.setPositiveButton("OK", okListener)
-				.setNegativeButton("Cancel", null)
+				.setPositiveButton(R.string.aceptar, okListener)
+				.setNegativeButton(R.string.cancelar, null)
 				.create()
 				.show();
 	}
