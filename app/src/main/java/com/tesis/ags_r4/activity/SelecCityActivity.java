@@ -21,10 +21,7 @@ import com.tesis.ags_r4.R;
 
 
 public class SelecCityActivity extends Activity{
-	private Map<String, List<String>> collLugares;
-	List<String> listCat,listCity;
-	List<String> listLugares;
-	private ExpandableListView expListView;
+	List<String> listCity;
 	private ListView listViewCity;
 	private Lugar lugarBd;
 	private List<Lugar> l;

@@ -89,7 +89,7 @@ public class GuiarPorDireccion  extends AppCompatActivity {
 			    	  List<Address> geoResults = geoCoder.getFromLocationName(direccion.getText().toString()+ciudad.getText().toString()+","+provincia.getText().toString(), 2);
 			    	  if (geoResults.size()==0) {
 			  	        //geoResults = geoCoder.getFromLocationName(direccion.getText().toString()+ciudad.getText().toString()+","+provincia.getText().toString(), 1);
-			    		  Toast.makeText(getBaseContext(),"No se ha Podidio Encontrar, Compruebe la Busqueda",Toast.LENGTH_LONG).show();
+			    		  Toast.makeText(getBaseContext(),getResources().getString(R.string.no_ubicado),Toast.LENGTH_LONG).show();
 			    	  }
 			  	    if (geoResults.size()>0) {
 			  	        Address addr = geoResults.get(0); 
@@ -134,7 +134,7 @@ public class GuiarPorDireccion  extends AppCompatActivity {
 			  	    }    
 			    } catch (IOException e) {
 			    	 //Toast.makeText(getBaseContext(),e.getMessage(),Toast.LENGTH_LONG).show();
-			    	Toast.makeText(getBaseContext(),"No se ha Podidio Encontrar, Compruebe la Busqueda y/o Conectividad",Toast.LENGTH_LONG).show();
+			    	Toast.makeText(getBaseContext(),getResources().getString(R.string.no_ubicado),Toast.LENGTH_LONG).show();
 			    }
 
 
@@ -257,13 +257,12 @@ public class GuiarPorDireccion  extends AppCompatActivity {
 		final Activity activity = this;
 		final Intent intent=new Intent(this,GuiarMapa.class);
 		Geocoder geoCoder = new Geocoder(getBaseContext(), Locale.getDefault());
-		Toast.makeText(getBaseContext(),"EntroMetodo",Toast.LENGTH_LONG).show();
 
 		try {
 			List<Address> geoResults = geoCoder.getFromLocationName(direccion.getText().toString()+ciudad.getText().toString()+","+provincia.getText().toString(), 2);
 			if (geoResults.size()==0) {
 				//geoResults = geoCoder.getFromLocationName(direccion.getText().toString()+ciudad.getText().toString()+","+provincia.getText().toString(), 1);
-				Toast.makeText(getBaseContext(),"No se ha Podidio Encontrar, Compruebe la Busqueda",Toast.LENGTH_LONG).show();
+				Toast.makeText(getBaseContext(),getResources().getString(R.string.no_ubicado),Toast.LENGTH_LONG).show();
 			}
 			if (geoResults.size()>0) {
 				Address addr = geoResults.get(0); 
@@ -277,7 +276,7 @@ public class GuiarPorDireccion  extends AppCompatActivity {
 			}    
 		} catch (IOException e) {
 			//Toast.makeText(getBaseContext(),e.getMessage(),Toast.LENGTH_LONG).show();
-			Toast.makeText(getBaseContext(),"No se ha Podidio Encontrar, Compruebe la Busqueda y/o Conectividad",Toast.LENGTH_LONG).show();
+			Toast.makeText(getBaseContext(),getResources().getString(R.string.no_ubicado),Toast.LENGTH_LONG).show();
 		}	
 	}
 
@@ -294,8 +293,8 @@ public class GuiarPorDireccion  extends AppCompatActivity {
 	private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
 		new AlertDialog.Builder(GuiarPorDireccion.this)
 				.setMessage(message)
-				.setPositiveButton("OK", okListener)
-				.setNegativeButton("Cancel", null)
+				.setPositiveButton(getResources().getString(R.string.aceptar), okListener)
+				.setNegativeButton(getResources().getString(R.string.cancelar), null)
 				.create()
 				.show();
 	}

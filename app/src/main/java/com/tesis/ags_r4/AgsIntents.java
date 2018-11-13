@@ -4,8 +4,6 @@ import com.tesis.ags_r4.activity.AbmActivity;
 import com.tesis.ags_r4.activity.AdminActivity;
 import com.tesis.ags_r4.activity.AdminContactActivity;
 import com.tesis.ags_r4.activity.CargarActivity;
-import com.tesis.ags_r4.activity.EditarActivity;
-import com.tesis.ags_r4.activity.EliminarActivity;
 import com.tesis.ags_r4.activity.GuiarPorDireccion;
 import com.tesis.ags_r4.activity.InfActivity;
 import com.tesis.ags_r4.activity.MakeCallActivity;
@@ -34,15 +32,7 @@ public class AgsIntents {
 	public static Class<CargarActivity> getCargarActivity(){
 		return CargarActivity.class;
 	}
-	
-	public static Class<EliminarActivity> getEliminarActivity(){
-		return EliminarActivity.class;
-	}
-	
-	public static Class<EditarActivity> getEditarActivity(){
-		return EditarActivity.class;
-	}
-	
+
 	public static Class<SelectCatActivity> getSelecCatActivity(){
 		return SelectCatActivity.class;
 	}

@@ -28,6 +28,8 @@
     <string name="editar">Edit</string>
     <string name="visitar">Visit</string>
     <string name="llamar">Call</string>
+    <string name="llamar_a">Call to</string>
+    <string name="llamando_a">Calling to </string>
     <string name="ayuda">Help</string>
     <string name="lugar_salud_categoria">Health</string>
     <string name="lugar_tramites_categoria">Formalities</string>
@@ -46,7 +48,7 @@
     <string name="l_carg">Place Loaded Successfully</string>
     <string name="contact_carg">Successfully Loaded Contact</string>
     <string name="contact_act">Successfully Updated Contact</string>
-    <string name="no_lugar">There are no loaded places. Back</string>
+    <string name="no_lugar">There are not loaded places. Back</string>
     <string name="lugar">Place</string>
     <string name="elim_mens">Eliminated Correctly</string>
     <string name="calc_rec">Calculating Travel</string>
@@ -67,4 +69,39 @@
     <string name="ciudad">City</string>
     <string name="provincia">State</string>
     <string name="title_activity_maps">Map</string>
+    <string name="volver">to return press the button back of telephone</string>
+    <string name="necesita_permisos">Necesitas otorgar permisos para </string>
+    <string name="internet">Internet </string>
+    <string name="escribir_en_memoria">Write in memory </string>
+    <string name="acceso_localizacion">Access to location </string>
+    <string name="save_data">The dates were save successfully</string>
+    <string name="edit_datos">Date edit successfully</string>
+    <string name="accion_cancelar">Action Canceled</string>
+    <string name="gps_desactivado">GPS Disabled</string>
+    <string name="repito">Repeat</string>
+    <string name="no_intrucciones">There are intructions</string>
+    <string name="parada_colectivo">You are so near to busstop</string>
+    <string name="descender">You should ring the beld to get off the buss </string>
+    <string name="se_encuentra"> You are in </string>
+    <string name="destino">You are so near to destination.</string>
+    <string name="recorrido_fin">Finished tour</string>
+    <string name="leer_contactos">Read Contacts</string>
+    <string name="permiso_denegado">Some permission was denied</string>
+    <string name="permiso_exitoso">Permissions successfully</string>
+    <string name="no_contactos">There are not contacts save, go to the config to save the contacts</string>
+    <string name="no_ubicado"> could not find, check of find or connectivity</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>

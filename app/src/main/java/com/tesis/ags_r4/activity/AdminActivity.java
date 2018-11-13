@@ -48,7 +48,7 @@ public class AdminActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		
 		setContentView(R.layout.admin);
-		Toast.makeText(getBaseContext(), "Para volver a información presione el botón atrás del teléfono", Toast.LENGTH_LONG)
+		Toast.makeText(getBaseContext(), getResources().getString(R.string.volver), Toast.LENGTH_LONG)
 		.show();
 		
 		View contact = (View) window.findViewById(R.id.button_cargar_numero);
@@ -60,16 +60,16 @@ public class AdminActivity extends Activity {
 								/*if (!addPermission(permissionsList, Manifest.permission.INTERNET))
 									permissionsNeeded.add("Internet");*/
 						if (!addPermission(permissionsList, Manifest.permission.READ_CONTACTS))
-							permissionsNeeded.add("Leer contactos");
+							permissionsNeeded.add(getResources().getString(R.string.leer_contactos));
 						if (!addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE))
-							permissionsNeeded.add("Escribir en memoria");
+							permissionsNeeded.add(getResources().getString(R.string.escribir_en_memoria));
 						/*if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))
 							permissionsNeeded.add("Realizar llamadas");*/
 
 								if (permissionsList.size() > 0) {
 									if (permissionsNeeded.size() > 0) {
 										// Need Rationale
-										String message = "Necesitas otorgar permisos para " + permissionsNeeded.get(0);
+										String message = getResources().getString(R.string.necesita_permisos) + permissionsNeeded.get(0);
 										for (int i = 1; i < permissionsNeeded.size(); i++)
 											message = message + ", " + permissionsNeeded.get(i);
 										showMessageOKCancel(message,
@@ -107,8 +107,8 @@ public class AdminActivity extends Activity {
 	private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
 		new AlertDialog.Builder(AdminActivity.this)
 				.setMessage(message)
-				.setPositiveButton("OK", okListener)
-				.setNegativeButton("Cancel", null)
+				.setPositiveButton(getResources().getString(R.string.aceptar), okListener)
+				.setNegativeButton(getResources().getString(R.string.cancelar), null)
 				.create()
 				.show();
 	}
@@ -149,7 +149,7 @@ public class AdminActivity extends Activity {
 				if (perms.get(Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED
 						&& perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
 					// All Permissions Granted
-					Toast.makeText(AdminActivity.this, "Permisos ok", Toast.LENGTH_SHORT)
+					Toast.makeText(AdminActivity.this, getResources().getString(R.string.permiso_exitoso), Toast.LENGTH_SHORT)
 							.show();
 					final Activity activity = this;
 					final Intent intent=new Intent(this,GuiarMapa.class);
@@ -157,7 +157,7 @@ public class AdminActivity extends Activity {
 					activity.startActivity(adminContact);
 				} else {
 					// Permission Denied
-					Toast.makeText(AdminActivity.this, "Algun permiso fue denegado", Toast.LENGTH_SHORT)
+					Toast.makeText(AdminActivity.this, getResources().getString(R.string.permiso_denegado), Toast.LENGTH_SHORT)
 							.show();
 				}
 			}
