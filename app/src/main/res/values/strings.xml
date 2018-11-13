@@ -67,6 +67,13 @@
     <string name="lugar_cargado">Lugar Cargado</string>
     <string name="buscar_direccion">Buscar por Dirección</string>
     <string name="volver_menu">Para volver al menú, presione el boton atrás del teléfono</string>
+    <string name="necesita_permisos">Necesitas otorgar permisos para </string>
+    <string name="internet">Internet </string>
+    <string name="escribir_en_memoria">Escribir en memoria </string>
+    <string name="acceso_localizacion">Acceso a localizacion </string>
+
+
+
 
 
 
