@@ -32,8 +32,11 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Toast;
@@ -45,14 +48,13 @@ import com.tesis.ags_r4.navigation.GMapV2Direction;
 import com.tesis.ags_r4.navigation.GetDirectionsAsyncTask;
 import com.tesis.ags_r4.navigation.Instructions;
 
-public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*implements SensorEventListener*/ {
+public class GuiarMapa extends AppCompatActivity implements OnMapReadyCallback,
+		ActivityCompat.OnRequestPermissionsResultCallback {
 	/**
 	 * Note that this may be null if the Google Play services APK is not available.
 	 */
 	/** Referencia al TAG de log. */
 	private static final String TAG = "[DirectoAndroidV2_EJ2]";
-
-	private GoogleMap mMap;
 	private LocationManager locManager;
 	private MyLocationListener locListener;
 	private double lat, mlat, lngDest = 0, latDest = 0;
@@ -69,6 +71,21 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 	private int acces, stop = 0, llegoDest = 0;
 	private int l = 1, cartel = 1, colec;
 	private SupportMapFragment mMapSupport;
+
+	/**
+	 * Request code for location permission request.
+	 *
+	 * @see #onRequestPermissionsResult(int, String[], int[])
+	 */
+	private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+
+	/**
+	 * Flag indicating whether a requested permission has been denied after returning in
+	 * {@link #onRequestPermissionsResult(int, String[], int[])}.
+	 */
+	private boolean mPermissionDenied = false;
+
+	private GoogleMap mMap;
 
 	/**
 	 * Root of the layout of this Activity.
@@ -88,6 +105,9 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
 		setContentView(R.layout.guiar);
+		SupportMapFragment mapFragment =
+				(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+		mapFragment.getMapAsync(this);
 		//TENGO QUE DIFERENCIAR SI VIENE DE LUGAR O POR PONER LA DIRECCION
 		lat = intent.getDoubleExtra("lat", 0.0);//00 valor por defecto si no viene nada
 		lng = intent.getDoubleExtra("lng", 0.0);
@@ -107,7 +127,6 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		this.wakelock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "etiqueta");
 		wakelock.acquire();
-		//getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		locListener = new MyLocationListener() {
 			@Override
@@ -151,9 +170,9 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 				mMapSupport.getMapAsync(this);
 			}
 		} *///else {
-			configGps();
-			mMapSupport = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map));
-			mMapSupport.getMapAsync(this);
+		configGps();
+		mMapSupport = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map));
+		mMapSupport.getMapAsync(this);
 		//}
 	}
 
@@ -189,10 +208,9 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		}
 		locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 25000, 0, (LocationListener) locListener);
 
-		if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-		{
+		if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 			Toast.makeText(getBaseContext(), getResources().getString(R.string.gps_desactivado), Toast.LENGTH_LONG)
-			.show(); 
+					.show();
 			Intent settingsIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 			settingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
 			this.startActivityForResult(settingsIntent, 0);
@@ -236,25 +254,38 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 					});
 		}
 	}
+
 	@Override
 	public void onMapReady(GoogleMap map) {
-		mMap=map;
+		mMap = map;
+		setUpMap();
 	}
 
 	/**
 	 * Ponemos como marcador mi ubicacion y a donde deseo dirigirme, calculo la distancia.
-	 * 
+	 *
 	 * <p>
 	 * This should only be called once and when we are sure that {@link #mMap} is not null.
 	 */
-	private void setUpMap() { 
-		
+	private void setUpMap() {
+
 		mMap.getUiSettings().setZoomControlsEnabled(false); 		 
 		/*mlat=-33.124064;
 		mlng=-64.341153;
 		lat=-33.114355;
 		lng=-64.309523;*/
-		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlat,mlng), 12));
+		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlat, mlng), 12));
+		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+			// TODO: Consider calling
+			//    ActivityCompat#requestPermissions
+			// here to request the missing permissions, and then overriding
+			//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+			//                                          int[] grantResults)
+			// to handle the case where the user grants the permission. See the documentation
+			// for ActivityCompat#requestPermissions for more details.
+			return;
+		}
+		mMap.setMyLocationEnabled(true);
 		//Construye la ruta, desde una latitud-longitud hasta otra latitud-longitud
 		//tengo que construir desde mi ubicacion actual hasta la parada de colectivo si se 
 		//superan ciertos metros, y sino hasta el lugar si esta cerca.
@@ -386,10 +417,10 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		map.put(GetDirectionsAsyncTask.DESTINATION_LONG, String.valueOf(toPositionLong));
 		map.put(GetDirectionsAsyncTask.DIRECTIONS_MODE, mode);
 
-		GetDirectionsAsyncTask asyncTask = new GetDirectionsAsyncTask(this);
+		//GetDirectionsAsyncTask asyncTask = new GetDirectionsAsyncTask(this);
 
 
-		asyncTask.execute(map);
+		//asyncTask.execute(map);
 
 	}
 
@@ -562,8 +593,57 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		return "";
 		
 	}
-	
-	
+
+
+	/**
+	 * Enables the My Location layer if the fine location permission has been granted.
+	 */
+	private void enableMyLocation() {
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+				!= PackageManager.PERMISSION_GRANTED) {
+			// Permission to access the location is missing.
+			PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE,
+					Manifest.permission.ACCESS_FINE_LOCATION, true);
+		} else if (mMap != null) {
+			// Access to the location has been granted to the app.
+			mMap.setMyLocationEnabled(true);
+		}
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+										   @NonNull int[] grantResults) {
+		if (requestCode != LOCATION_PERMISSION_REQUEST_CODE) {
+			return;
+		}
+
+		if (PermissionUtils.isPermissionGranted(permissions, grantResults,
+				Manifest.permission.ACCESS_FINE_LOCATION)) {
+			// Enable the my location layer if the permission has been granted.
+			enableMyLocation();
+		} else {
+			// Display the missing permission error dialog when the fragments resume.
+			mPermissionDenied = true;
+		}
+	}
+
+	@Override
+	protected void onResumeFragments() {
+		super.onResumeFragments();
+		if (mPermissionDenied) {
+			// Permission was not granted, display error dialog.
+			showMissingPermissionError();
+			mPermissionDenied = false;
+		}
+	}
+
+	/**
+	 * Displays a dialog with error message explaining that the location permission is missing.
+	 */
+	private void showMissingPermissionError() {
+		PermissionUtils.PermissionDeniedDialog
+				.newInstance(true).show(getSupportFragmentManager(), "dialog");
+	}
 	
 	
 
@@ -669,11 +749,6 @@ public class GuiarMapa extends FragmentActivity implements OnMapReadyCallback/*i
 		return minDist;
 	}
 
-
-	//Metodo que recalcula la ruta hasta el destino cuando se bajo del colectivo
-	public void RecalRoute(){
-
-	}
 
 	//Metodo que recorre la lista y agrega la palabra metros, pasos a la distancia,
 	//Insrucciones borra lo que esta entre <....>

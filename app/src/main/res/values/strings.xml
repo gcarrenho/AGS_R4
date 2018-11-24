@@ -38,7 +38,7 @@
     <string name="tipo_lugar">Tipo de Lugar (Ejemplo: Salud)</string>
 
     <string name="modoDeUso">Al iniciar se tiene un menú de opciones, en donde usted debe elegir entre \"Guiar\", \"Lugares\", \"Información\", \"Salir\", si elige Lugares, usted podra cargar, editar o eliminar un lugar que frecuente comunmente. Si elije Guiar, se desplegará una lista con los lugares cargados por categoría, aquí seleccionará el lugar al cual desea llegar.Si elige Información, accederá a una pantalla con botones dispuesto de forma vertical, uno debajo del otro, donde podrá actualizar el recorrido de los colectivos entre otros.Si elige salir, saldrá de la aplicación.</string>
-    <string name="error_when_retrieving_data">Surgió cun problema cuando se intento conectar a internet</string>
+    <string name="error_when_retrieving_data">Surgió un problema cuando se intento conectar a internet</string>
     <string name="actualizar_lineas">Actualizar Recorridos</string>
     <string name="recup">Recuperar</string>
     <string name="obt_loc">Espere hasta obtener su localización</string>
@@ -69,10 +69,10 @@
     <string name="lugar_cargado">Lugar Cargado</string>
     <string name="buscar_direccion">Buscar por Dirección</string>
     <string name="volver">Para volver, presione el boton atrás del teléfono</string>
-    <string name="necesita_permisos">Necesitas otorgar permisos para </string>
+    <string name="necesita_permisos">Necesitas otorgar permisos para: </string>
     <string name="internet">Internet </string>
-    <string name="escribir_en_memoria">Escribir en memoria </string>
-    <string name="acceso_localizacion">Acceso a localización </string>
+    <string name="escribir_en_memoria"> Escribir en memoria </string>
+    <string name="acceso_localizacion"> Acceso a localización </string>
     <string name="save_data">Los datos fueron grabados correctamente</string>
     <string name="edit_datos">Datos editados correctamente</string>
     <string name="accion_cancelar">Acción Cancelada</string>

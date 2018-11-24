@@ -12,7 +12,8 @@
 bin/
 gen/
 out/
-
+# App im
+./app.im
 # Gradle files
 .gradle/
 build/

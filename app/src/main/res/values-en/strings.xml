@@ -70,10 +70,10 @@
     <string name="provincia">State</string>
     <string name="title_activity_maps">Map</string>
     <string name="volver">to return press the button back of telephone</string>
-    <string name="necesita_permisos">Necesitas otorgar permisos para </string>
+    <string name="necesita_permisos">You need to give permission to </string>
     <string name="internet">Internet </string>
-    <string name="escribir_en_memoria">Write in memory </string>
-    <string name="acceso_localizacion">Access to location </string>
+    <string name="escribir_en_memoria"> Write in memory </string>
+    <string name="acceso_localizacion"> Access to location </string>
     <string name="save_data">The dates were save successfully</string>
     <string name="edit_datos">Date edit successfully</string>
     <string name="accion_cancelar">Action Canceled</string>
@@ -90,6 +90,11 @@
     <string name="permiso_exitoso">Permissions successfully</string>
     <string name="no_contactos">There are not contacts save, go to the config to save the contacts</string>
     <string name="no_ubicado"> could not find, check of find or connectivity</string>
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
 
 
 
