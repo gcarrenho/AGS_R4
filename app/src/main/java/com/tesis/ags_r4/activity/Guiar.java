@@ -30,6 +30,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.tesis.ags_r4.GuiarMapa;
+import com.tesis.ags_r4.MapaToGuide;
 import com.tesis.ags_r4.R;
 import com.tesis.ags_r4.location.MyLocationListener;
 
@@ -74,7 +75,7 @@ public class Guiar extends FragmentActivity {
         provincia = (EditText) window.findViewById(R.id.textProvincia);
         View  aceptar = window.findViewById(R.id.aceptarButtom);
         View cancelar = window.findViewById(R.id.cancelarButtom);
-        final Intent intent=new Intent(this,GuiarMapa.class);
+        final Intent intent=new Intent(this,MapaToGuide.class);
         final List<String> permissionsNeeded = new ArrayList<String>();
         final List<String> permissionsList = new ArrayList<String>();
 		aceptar.setOnClickListener(new OnClickListener() {

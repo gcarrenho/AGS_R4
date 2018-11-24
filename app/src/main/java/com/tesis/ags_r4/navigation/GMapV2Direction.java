@@ -1,7 +1,12 @@
 package com.tesis.ags_r4.navigation;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -12,15 +17,18 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.tesis.ags_r4.R;
 
-public class GMapV2Direction {
+public class GMapV2Direction{
 
 	public final static String MODE_DRIVING = "driving";
 	public final static String MODE_WALKING = "walking";
@@ -28,19 +36,24 @@ public class GMapV2Direction {
 	public GMapV2Direction() { }
 
 	public Document getDocument(LatLng start, LatLng end, String mode) {
-		String url = "http://maps.googleapis.com/maps/api/directions/xml?"
+		String url = "https://maps.googleapis.com/maps/api/directions/xml?"
 				+ "origin=" + start.latitude + "," + start.longitude
 				+ "&destination=" + end.latitude + "," + end.longitude
-				+ "&mode=" + mode +"&sensor=false&language=es-ES&units=metric";
+				+ "&mode=" + mode +"&sensor=false&language="+Locale.getDefault().toString()+"&units=metric"+"&key=AIzaSyCcCDHv23TZ09gmeB7dizXXfwFPWytC2uc" ;
 
+		Log.i("Url direction",url);
 		try {
 			HttpClient httpClient = new DefaultHttpClient();
 			HttpContext localContext = new BasicHttpContext();
 			HttpPost httpPost = new HttpPost(url);
 			HttpResponse response = httpClient.execute(httpPost, localContext);
 			InputStream in = response.getEntity().getContent();
+			//String res = convertStreamToString(in);
+
+			//Log.i("Respuesta ",res);
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document doc = builder.parse(in);
+			//Log.i("Respuesta ",doc.getXmlEncoding());
 			return doc;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -170,7 +183,7 @@ public class GMapV2Direction {
 				ins.setDistance(valueNode.getTextContent());//guardar este valor en la lista(registro)Vamos a crear una clase que contenga lo que necesito.
 				//listGeopoints.add(new LatLng(lat, lng));
 
-				Node startLocNode = nl2.item(getNodeIndex(nl2, "start_location"));
+				Node startLocNode = nl2.item(getNodeIndex(nl2, "end_location"));
 				nl3 = startLocNode.getChildNodes();
 				valueNode = nl3.item(getNodeIndex(nl3, "lat"));//latitud
 				ins.setLat(valueNode.getTextContent());
@@ -225,6 +238,28 @@ public class GMapV2Direction {
 			poly.add(position);
 		}
 		return poly;
+	}
+
+	private String convertStreamToString(InputStream is) {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		StringBuilder sb = new StringBuilder();
+
+		String line;
+		try {
+			while ((line = reader.readLine()) != null) {
+				sb.append(line).append('\n');
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				is.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return sb.toString();
 	}
 
 }

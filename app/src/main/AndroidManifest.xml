@@ -84,6 +84,11 @@
             android:theme="@style/Theme.AppCompat"
             ></activity>
 
+        <activity android:name="com.tesis.ags_r4.MapaToGuide"
+            android:screenOrientation="portrait"
+            android:label="Mapa de Guiado2  " >
+        </activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
