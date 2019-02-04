@@ -1,27 +1,35 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keyapp'
+            keyPassword '34771198'
+            storeFile file('/Users/gcarreno/Documents/ProyectoAGS-R4/AGS_R4/FirmaDigitalApp/release.keystore')
+            storePassword '34771198'
+        }
+    }
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
-
     defaultConfig {
-        applicationId "com.tesis.ags_r4"
+        applicationId "com.ags.guideme"
         minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 12
-        versionName "4.3"
+        targetSdkVersion 26
+        versionCode 3
+        versionName "1.0.2"
         multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
     //api 'com.android.support:appcompat-v7:23.4.0'
     //api 'com.google.android.gms:play-services-maps:10.2.1'
@@ -30,7 +38,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.android.support:support-v4:27.0.2'
     implementation 'com.google.android.gms:play-services-places:16.0.0'
-    api group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: '4.3.5.1'
+    api 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
 }
 
 android {

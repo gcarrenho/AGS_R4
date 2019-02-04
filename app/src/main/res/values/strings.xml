@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AGS-R4</string>
+    <string name="app_name">GuideMe</string>
     <string name="app_version">1.0.0 alpha</string>
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
@@ -55,6 +55,7 @@
     <string name="calc_rec">Calculando Recorrido</string>
     <string name="lin_tom">Linea a Tomar </string>
     <string name="toc_timbre">Debería Tocar el Timbre para descender del Transporte </string>
+    <string name="descender">Debería Tocar el Timbre para descender del Transporte </string>
     <string name="dest_prox">Se Encuentra Muy Próximo al destino deseado. Recorrido Finalizado. </string>
     <string name="metros"> Metros, o </string>
     <string name="kilom"> Kilometros, o </string>
@@ -87,6 +88,11 @@
     <string name="permiso_exitoso">Permisos exitosos</string>
     <string name="no_contactos"> No hay contacto guardado, dirijase a configuración para su carga</string>
     <string name="no_ubicado"> No se ha Podidio Encontrar, Compruebe la Busqueda y/o Conectividad</string>
+    <string name="se_encuentra"> Usted se encuentra en </string>
+    <string name="permission_rationale_location">Se requiere acceso al servicio de ubicación para demostrar la función "Mi ubicación", que muestra su ubicación actual en el mapa.</string>
+    <string name="location_permission_denied">Esta muestra requiere permiso de ubicación para habilitar la capa "Mi ubicación". Vuelva a intentarlo y otorgue acceso para usar la ubicación. Si el permiso ha sido denegado permanentemente, se puede habilitar desde la Configuración del sistema de Aplicaciones y "Demostraciones API de Google Maps".</string>
+    <string name="permission_required_toast">Se requiere permiso de ubicación para esta demostración.</string>
+
 
 
 

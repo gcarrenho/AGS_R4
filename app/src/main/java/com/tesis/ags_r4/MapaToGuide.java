@@ -578,22 +578,22 @@ public class MapaToGuide extends AppCompatActivity
 
     public void setLocation(Location loc) {
             //Distancia en metros
-        if(i<inst.size()-1) {
+        if(i<inst.size()) {
             double currentDistToPoint = this.dist(loc.getLatitude(), loc.getLongitude(), Double.valueOf(inst.get(i).getLat()), Double.valueOf(inst.get(i).getLng()));
             double lastDistLocationKnow=this.dist(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude(), Double.valueOf(inst.get(i).getLat()), Double.valueOf(inst.get(i).getLng()));
-            Toast.makeText(getBaseContext(),"Distancia vieja "+lastDistLocationKnow, Toast.LENGTH_LONG)
+            /*Toast.makeText(getBaseContext(),"Distancia vieja "+lastDistLocationKnow, Toast.LENGTH_LONG)
                     .show();
             Toast.makeText(getBaseContext(),"Distancia corriente "+currentDistToPoint, Toast.LENGTH_LONG)
-                    .show();
+                    .show();*/
             Log.i("Distancia vieja",String.valueOf(lastDistLocationKnow));
             Log.i("Distancia corriente",String.valueOf(currentDistToPoint));
 
             //Si la distancia actual contra el punto destino es menor que la
-            // ultima distancia conocida contra el punto destino
+            //ultima distancia conocida contra el punto destino
             //significa que me estoy acercando
             if (currentDistToPoint <lastDistLocationKnow){
                 if(currentDistToPoint<=50){//dar la instruccion e incrementar el i
-                    Toast.makeText(getBaseContext(),inst.get(i+1).getInstruction(), Toast.LENGTH_LONG)
+                    Toast.makeText(getBaseContext(),inst.get(i+1).getInstruction()+" a "+currentDistToPoint+" metros", Toast.LENGTH_LONG)
                             .show();
                     i++;
                 }

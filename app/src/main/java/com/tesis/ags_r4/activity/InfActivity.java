@@ -38,7 +38,7 @@ public class InfActivity extends Activity{
 		.show();
 		Window window = getWindow();
 		final Activity activity = this;
-		View actButton = window.findViewById(R.id.button_act);
+		/*View actButton = window.findViewById(R.id.button_act);
 		//Evento actualizar
 		actButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -47,8 +47,7 @@ public class InfActivity extends Activity{
 				Toast.makeText(getBaseContext(), getResources().getString(R.string.save_data),
 						Toast.LENGTH_SHORT).show();
 			}
-		});
-
+		});*/
 		View recButton = window.findViewById(R.id.button_rec);
 		//Evento que escucha el click sobre el boton recuperar
 		recButton.setOnClickListener(new OnClickListener() {

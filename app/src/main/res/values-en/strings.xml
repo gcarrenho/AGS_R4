@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AGS-R4</string>
+    <string name="app_name">GuideMe</string>
+    <string name="app_version">1.0.0 alpha</string>
     <string name="aceptar">Accept</string>
     <string name="cancelar">Cancel</string>
     <string name="help">Help</string>
@@ -35,6 +36,8 @@
     <string name="lugar_tramites_categoria">Formalities</string>
     <string name="lugar_bares_categoria">Pubs</string>
     <string name="lugar_otros_categoria">Others</string>
+    <string name="lugar_cargado">Place Save</string>
+    <string name="buscar_direccion">Looking for direction</string>
     <string name="tipo_lugar">Type of PLace (Example: Health)</string>
     <string name="modoDeUso">When you start you have a menu of options, where you have to choose between \\ \"Guide \\\", \\ \"Places \\\", \\ \"Information \\\", \\ \"Exit \\\", if you choose Places , you can upload, edit or delete a common place. If you choose Guide, a list of the places loaded by category will be displayed, here you will select the place you want to reach. If you choose Information, you will access a screen with buttons arranged vertically, one below the other, where you can update the route of Collectives among others. If you choose to leave, you will exit the application.</string>
     <string name="error_when_retrieving_data">It was a problem when trying to connect to the internet</string>
