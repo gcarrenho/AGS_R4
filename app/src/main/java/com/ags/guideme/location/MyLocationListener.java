@@ -1,10 +1,10 @@
-package com.tesis.ags_r4.location;
+package com.ags.guideme.location;
 
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
-import com.tesis.ags_r4.GuiarMapa;
+import com.ags.guideme.GuiarMapa;
 
 
 public class MyLocationListener implements LocationListener {

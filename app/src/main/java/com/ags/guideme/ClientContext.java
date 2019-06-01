@@ -1,8 +1,8 @@
-package com.tesis.ags_r4;
+package com.ags.guideme;
 
 import java.io.File;
 
-import com.tesis.ags_r4.db.SQLiteAPI;
+import com.ags.guideme.db.SQLiteAPI;
 
 public interface ClientContext {
 	

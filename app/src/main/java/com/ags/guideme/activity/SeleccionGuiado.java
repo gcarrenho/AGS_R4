@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 
 import android.app.Activity;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 
-import com.tesis.ags_r4.AgsIntents;
-import com.tesis.ags_r4.R;
+import com.ags.guideme.AgsIntents;
+import com.ags.guideme.R;
 
 public class SeleccionGuiado extends Activity {
 

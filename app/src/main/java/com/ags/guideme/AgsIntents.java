@@ -1,16 +1,16 @@
-package com.tesis.ags_r4;
+package com.ags.guideme;
 
-import com.tesis.ags_r4.activity.AbmActivity;
-import com.tesis.ags_r4.activity.AdminActivity;
-import com.tesis.ags_r4.activity.AdminContactActivity;
-import com.tesis.ags_r4.activity.CargarActivity;
-import com.tesis.ags_r4.activity.GuiarPorDireccion;
-import com.tesis.ags_r4.activity.InfActivity;
-import com.tesis.ags_r4.activity.MakeCallActivity;
-import com.tesis.ags_r4.activity.SalirActivity;
-import com.tesis.ags_r4.activity.SelecCityActivity;
-import com.tesis.ags_r4.activity.SeleccionGuiado;
-import com.tesis.ags_r4.activity.SelectCatActivity;
+import com.ags.guideme.activity.AbmActivity;
+import com.ags.guideme.activity.AdminActivity;
+import com.ags.guideme.activity.AdminContactActivity;
+import com.ags.guideme.activity.CargarActivity;
+import com.ags.guideme.activity.GuiarPorDireccion;
+import com.ags.guideme.activity.InfActivity;
+import com.ags.guideme.activity.MakeCallActivity;
+import com.ags.guideme.activity.SalirActivity;
+import com.ags.guideme.activity.SelecCityActivity;
+import com.ags.guideme.activity.SeleccionGuiado;
+import com.ags.guideme.activity.SelectCatActivity;
 
 
 //Clase Intensts que retorna todas las activitys

@@ -1,4 +1,4 @@
-package com.tesis.ags_r4;
+package com.ags.guideme;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,12 +41,12 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Toast;
 
-import com.tesis.ags_r4.file.MakeFile;
-import com.tesis.ags_r4.location.MyLocation;
-import com.tesis.ags_r4.location.MyLocationListener;
-import com.tesis.ags_r4.navigation.GMapV2Direction;
-import com.tesis.ags_r4.navigation.GetDirectionsAsyncTask;
-import com.tesis.ags_r4.navigation.Instructions;
+import com.ags.guideme.file.MakeFile;
+import com.ags.guideme.location.MyLocation;
+import com.ags.guideme.location.MyLocationListener;
+import com.ags.guideme.navigation.GMapV2Direction;
+import com.ags.guideme.navigation.GetDirectionsAsyncTask;
+import com.ags.guideme.navigation.Instructions;
 
 public class GuiarMapa extends AppCompatActivity implements OnMapReadyCallback,
 		ActivityCompat.OnRequestPermissionsResultCallback {

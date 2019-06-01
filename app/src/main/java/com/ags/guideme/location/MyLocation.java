@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.location;
+package com.ags.guideme.location;
 
 public class MyLocation {
 	private String mProvider;

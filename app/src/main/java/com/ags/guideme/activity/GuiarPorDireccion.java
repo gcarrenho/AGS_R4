@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import com.tesis.ags_r4.GuiarMapa;
+import com.ags.guideme.GuiarMapa;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -33,9 +33,9 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.tesis.ags_r4.MapaToGuide;
-import com.tesis.ags_r4.R;
-import com.tesis.ags_r4.location.MyLocationListener;
+import com.ags.guideme.MapaToGuide;
+import com.ags.guideme.R;
+import com.ags.guideme.location.MyLocationListener;
 
 /**
  * This class get location(latitud and longitud) from address, and then

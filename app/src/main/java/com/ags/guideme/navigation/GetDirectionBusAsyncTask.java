@@ -1,13 +1,13 @@
-package com.tesis.ags_r4.navigation;
+package com.ags.guideme.navigation;
 
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.w3c.dom.Document;
 
-import com.tesis.ags_r4.R;
-import com.tesis.ags_r4.activity.InfActivity;
-import com.tesis.ags_r4.file.MakeFile;
+import com.ags.guideme.R;
+import com.ags.guideme.activity.InfActivity;
+import com.ags.guideme.file.MakeFile;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;

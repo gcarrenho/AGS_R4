@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +14,10 @@ import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.tesis.ags_r4.AgsIntents;
-import com.tesis.ags_r4.ItemAdapter;
-import com.tesis.ags_r4.Lugar;
-import com.tesis.ags_r4.R;
+import com.ags.guideme.AgsIntents;
+import com.ags.guideme.ItemAdapter;
+import com.ags.guideme.Lugar;
+import com.ags.guideme.R;
 
 
 public class SelecCityActivity extends Activity{

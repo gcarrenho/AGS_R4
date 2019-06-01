@@ -1,4 +1,4 @@
-package com.tesis.ags_r4;
+package com.ags.guideme;
 
 import android.Manifest;
 import android.app.AlertDialog;

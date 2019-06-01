@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,9 +13,9 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import com.tesis.ags_r4.AgsIntents;
-import com.tesis.ags_r4.Contacto;
-import com.tesis.ags_r4.R;
+import com.ags.guideme.AgsIntents;
+import com.ags.guideme.Contacto;
+import com.ags.guideme.R;
 
 
 public class MakeCallActivity extends Activity {

@@ -1,9 +1,9 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.tesis.ags_r4.R;
+import com.ags.guideme.R;
 
 
 public class MainActivity extends AppCompatActivity {

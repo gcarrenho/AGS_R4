@@ -1,4 +1,4 @@
-package com.tesis.ags_r4;
+package com.ags.guideme;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
-import com.tesis.ags_r4.AgsIntents;
-import com.tesis.ags_r4.R;
-import com.tesis.ags_r4.location.MyLocationListener;
+import com.ags.guideme.AgsIntents;
+import com.ags.guideme.R;
+import com.ags.guideme.location.MyLocationListener;
 
 /**
  * Created by german on 27/03/17.

@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import android.Manifest;
 import android.app.Activity;
@@ -15,10 +15,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-import com.tesis.ags_r4.AgsIntents;
+import com.ags.guideme.AgsIntents;
 
-import com.tesis.ags_r4.GuiarMapa;
-import com.tesis.ags_r4.R;
+import com.ags.guideme.GuiarMapa;
+import com.ags.guideme.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

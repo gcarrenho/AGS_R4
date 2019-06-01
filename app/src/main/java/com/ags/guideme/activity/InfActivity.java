@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,10 +11,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 
-import com.tesis.ags_r4.AgsIntents;
-import com.tesis.ags_r4.R;
-import com.tesis.ags_r4.file.MakeFile;
-import com.tesis.ags_r4.navigation.GetDirectionBusAsyncTask;
+import com.ags.guideme.AgsIntents;
+import com.ags.guideme.R;
+import com.ags.guideme.file.MakeFile;
+import com.ags.guideme.navigation.GetDirectionBusAsyncTask;
 
 import android.app.Activity;
 import android.content.Intent;

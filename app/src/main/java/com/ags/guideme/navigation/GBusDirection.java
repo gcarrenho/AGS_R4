@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.navigation;
+package com.ags.guideme.navigation;
 
 import java.io.InputStream;
 

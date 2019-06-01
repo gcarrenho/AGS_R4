@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,9 +34,9 @@ import android.widget.Toast;
 import android.widget.TextView.BufferType;
 import android.location.Address;
 
-import com.tesis.ags_r4.Lugar;
-import com.tesis.ags_r4.R;
-import com.tesis.ags_r4.location.MyLocationListener;
+import com.ags.guideme.Lugar;
+import com.ags.guideme.R;
+import com.ags.guideme.location.MyLocationListener;
 
 
 @SuppressLint("NewApi")

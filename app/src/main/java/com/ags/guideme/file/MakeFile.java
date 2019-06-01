@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.file;
+package com.ags.guideme.file;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,7 +21,7 @@ public class MakeFile {
 		String contenido = coord;
 		try {
 			File tarjeta = Environment.getExternalStorageDirectory();
-			File file=new File(tarjeta.getAbsolutePath()+"/Android/data/com.tesis.ags_r4/recorridos");
+			File file=new File(tarjeta.getAbsolutePath()+"/Android/data/com.ags.guideme/recorridos");
 			boolean success = true;
 			if (!file.exists()) {
 				//Toast.makeText(MainActivity.this, "Directory Does Not Exist, Create It", Toast.LENGTH_SHORT).show();
@@ -42,7 +42,7 @@ public class MakeFile {
 		String nomarchivo = nom;
 		String todo = null ;
 		File tarjeta = Environment.getExternalStorageDirectory();
-		File file = new File(tarjeta.getAbsolutePath()+"/Android/data/com.tesis.ags_r4/recorridos/", nomarchivo);
+		File file = new File(tarjeta.getAbsolutePath()+"/Android/data/com.ags.guideme/recorridos/", nomarchivo);
 		try {
 			FileInputStream fIn = new FileInputStream(file);
 			InputStreamReader archivo = new InputStreamReader(fIn);
@@ -64,7 +64,7 @@ public class MakeFile {
 
 	public boolean fileExist(){
 		File tarjeta = Environment.getExternalStorageDirectory();
-		File file=new File(tarjeta.getAbsolutePath()+"/Android/data/com.tesis.ags_r4/recorridos");
+		File file=new File(tarjeta.getAbsolutePath()+"/Android/data/com.ags.guideme/recorridos");
 		return file.exists();
 	}
 	

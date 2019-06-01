@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.activity;
+package com.ags.guideme.activity;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -23,10 +23,10 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.view.View;
 
-import com.tesis.ags_r4.AgsIntents;
-import com.tesis.ags_r4.ExpandableListAdapter;
-import com.tesis.ags_r4.Lugar;
-import com.tesis.ags_r4.R;
+import com.ags.guideme.AgsIntents;
+import com.ags.guideme.ExpandableListAdapter;
+import com.ags.guideme.Lugar;
+import com.ags.guideme.R;
 
 public class SelectCatActivity extends Activity {
 

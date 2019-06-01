@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.db;
+package com.ags.guideme.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

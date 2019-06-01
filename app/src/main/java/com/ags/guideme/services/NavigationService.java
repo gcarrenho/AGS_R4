@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.services;
+package com.ags.guideme.services;
 
 import android.app.Service;
 import android.content.Intent;

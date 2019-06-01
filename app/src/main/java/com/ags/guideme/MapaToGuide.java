@@ -1,4 +1,4 @@
-package com.tesis.ags_r4;
+package com.ags.guideme;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -48,10 +48,10 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.tesis.ags_r4.location.MyLocation;
-import com.tesis.ags_r4.navigation.GMapV2Direction;
-import com.tesis.ags_r4.navigation.GetDirectionsAsyncTask;
-import com.tesis.ags_r4.navigation.Instructions;
+import com.ags.guideme.location.MyLocation;
+import com.ags.guideme.navigation.GMapV2Direction;
+import com.ags.guideme.navigation.GetDirectionsAsyncTask;
+import com.ags.guideme.navigation.Instructions;
 
 import java.io.IOException;
 import java.util.ArrayList;

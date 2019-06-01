@@ -1,4 +1,4 @@
-package com.tesis.ags_r4.navigation;
+package com.ags.guideme.navigation;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -26,7 +26,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.tesis.ags_r4.R;
+import com.ags.guideme.R;
 
 public class GMapV2Direction{
 

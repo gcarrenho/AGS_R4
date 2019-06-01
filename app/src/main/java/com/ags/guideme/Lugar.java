@@ -1,4 +1,4 @@
-package com.tesis.ags_r4;
+package com.ags.guideme;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.tesis.ags_r4.db.datosBd;
+import com.ags.guideme.db.datosBd;
 
 public class Lugar implements Serializable {
 	private static final long serialVersionUID = 729654300829771466L;
