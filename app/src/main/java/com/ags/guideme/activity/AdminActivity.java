@@ -5,8 +5,6 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -17,13 +15,11 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 import com.ags.guideme.AgsIntents;
 
-import com.ags.guideme.GuiarMapa;
 import com.ags.guideme.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class AdminActivity extends Activity {
@@ -152,7 +148,6 @@ public class AdminActivity extends Activity {
 					Toast.makeText(AdminActivity.this, getResources().getString(R.string.permiso_exitoso), Toast.LENGTH_SHORT)
 							.show();
 					final Activity activity = this;
-					final Intent intent=new Intent(this,GuiarMapa.class);
 					final Intent adminContact = new Intent(activity, AgsIntents.getAdminContactActivity());
 					activity.startActivity(adminContact);
 				} else {

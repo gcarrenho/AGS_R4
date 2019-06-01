@@ -270,7 +270,6 @@ public class MapaToGuide extends AppCompatActivity
     public void handleGetDirectionsResult(ArrayList directionPoints, ArrayList<Instructions> listInst)
     {
         Polyline newPolyline;
-        //GoogleMap mMap = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         PolylineOptions rectLine = new PolylineOptions().width(3).color(Color.RED);
         for(int i = 0 ; i < directionPoints.size() ; i++)
         {
@@ -281,11 +280,10 @@ public class MapaToGuide extends AppCompatActivity
         inst= new ArrayList<Instructions>();
         inst=listInst;
         textInst= new String();
+        Log.d(TAG, "Instrucciones originales. "+inst.get(0).getDistance()+" "+getResources().getString(R.string.metros)+" "+Math.round(Integer.parseInt(inst.get(0).getDistance())/0.6));
         fixListInst(inst);
         Toast.makeText(getBaseContext(),textInst, Toast.LENGTH_LONG)
                 .show();
-       // Toast.makeText(getBaseContext(),getResources().getString(R.string.repito)+textInst, Toast.LENGTH_LONG)
-       //         .show();
     }
 
     //Metodo que recorre la lista y agrega la palabra metros, pasos a la distancia,
@@ -297,7 +295,7 @@ public class MapaToGuide extends AppCompatActivity
             if(Integer.parseInt(inst.get(i).getDistance())<1000){
                 inst.get(i).setDistance(inst.get(i).getDistance()+" "+getResources().getString(R.string.metros)+" "+Math.round(Integer.parseInt(inst.get(i).getDistance())/0.6)+" "+getResources().getString(R.string.pasos));
             }else{
-                inst.get(i).setDistance(Math.round(Integer.parseInt(inst.get(i).getDistance())/1000)+" "+getResources().getString(R.string.kilom)+" "+Math.round(Integer.parseInt(inst.get(i).getDistance())/1000/0.6)+" "+getResources().getString(R.string.pasos));
+                inst.get(i).setDistance(Math.round(Integer.parseInt(inst.get(i).getDistance())/1000)+" "+getResources().getString(R.string.kilom)+" "+Math.round(Integer.parseInt(inst.get(i).getDistance())/0.6)+" "+getResources().getString(R.string.pasos));
             }
             int j=0;
             String instruc=inst.get(i).getInstruction();

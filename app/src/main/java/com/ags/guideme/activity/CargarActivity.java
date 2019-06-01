@@ -71,7 +71,6 @@ public class CargarActivity extends Activity implements OnInitListener {
 		//getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		lugarBd = new Lugar(this);
 		lugarBd.open();
-		//tts = new TextToSpeech(this, this);
 		locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		locListener = new MyLocationListener() {
 			@Override
@@ -104,16 +103,10 @@ public class CargarActivity extends Activity implements OnInitListener {
 		} else {
 			this.cargar();
 			if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-				// TODO: Consider calling
-				//    ActivityCompat#requestPermissions
-				// here to request the missing permissions, and then overriding
-				//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-				//                                          int[] grantResults)
-				// to handle the case where the user grants the permission. See the documentation
-				// for ActivityCompat#requestPermissions for more details.
+				//no tiene permiso
 				return;
 			}
-			locManager.removeUpdates(locListener);
+			//locManager.removeUpdates(locListener);
 		}
 		View cancelarButton = window.findViewById(R.id.cancelarButtom);
 		//Evento que escucha el click sobre el boton cancelar

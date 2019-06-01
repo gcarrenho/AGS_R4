@@ -38,25 +38,11 @@ public class InfActivity extends Activity{
 		.show();
 		Window window = getWindow();
 		final Activity activity = this;
-		/*View actButton = window.findViewById(R.id.button_act);
-		//Evento actualizar
-		actButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				findDirections(0.2563,0.25369,0.89658,0.7895,"walking");
-				Toast.makeText(getBaseContext(), getResources().getString(R.string.save_data),
-						Toast.LENGTH_SHORT).show();
-			}
-		});*/
 		View recButton = window.findViewById(R.id.button_rec);
 		//Evento que escucha el click sobre el boton recuperar
 		recButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				/*String coord=mfile.recuperar("17");
-				String[] listLatLng=coord.split(",0");
-				EditText text=(EditText)findViewById(R.id.editText1);
-				text.setText(String.valueOf(listLatLng.length));*/
 				Toast.makeText(getBaseContext(), R.string.modoDeUso,
 						Toast.LENGTH_SHORT).show();
 			}
@@ -72,27 +58,7 @@ public class InfActivity extends Activity{
 			}
 		});
 
-		/*View button3 = window.findViewById(R.id.button3);
-		//Evento que escucha el click sobre el boton recuperar
-		button3.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				String coord=mfile.recuperar("6");
-				//String[] listLatLng=coord.split(",0");
-				//findDirections(-33.121881,-64.337958,-33.124945,-64.345854, GMapV2Direction.MODE_WALKING );
-				//findDirections(0.2563,0.25369,0.89658,0.7895,"walking");
-				String[] listLatLng=coord.split(",0");
-				EditText text=(EditText)findViewById(R.id.editText1);
-				int i=0;
-				/*ArrayList lista = new ArrayList(); 
-				while(i<(listLatLng.length)/2){
 
-					lista.add(listLatLng[i]);
-					i++;
-				}*/
-		/*			text.setText(String.valueOf(listLatLng[(listLatLng.length)/2]));
-			}
-		});*/
 	}
 
 	public void findDirections(double fromPositionLat, double fromPositionLong, double toPositionLat, double toPositionLong, String mode)

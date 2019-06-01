@@ -31,70 +31,12 @@ import com.ags.guideme.R;
 
 public class MainMenuActivity extends Activity {
 
-	public static final int APP_EXIT_CODE = 4;
 	public static final String APP_EXIT_KEY = "APP_EXIT_KEY";
-	private int satellitesInFix=0;
-	private int satellites=0;
 	final private int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 125;
-	/*@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		if(resultCode == APP_EXIT_CODE){
-			getMyApplication().closeApplication(this);
-		}
-	}*/
-
-
-	/*public static Animation getAnimation(int left, int top){
-		Animation anim = new TranslateAnimation(TranslateAnimation.RELATIVE_TO_SELF, left, 
-				TranslateAnimation.RELATIVE_TO_SELF, 0, TranslateAnimation.RELATIVE_TO_SELF, top, TranslateAnimation.RELATIVE_TO_SELF, 0);
-		anim.setDuration(700);
-		anim.setInterpolator(new AccelerateInterpolator());
-		return anim;
-	}*/
 
 	//Esto solamente para hacer la animacion
 	public static void onCreateMainMenu(Window window, final Activity activity){
-		View head = (View) window.findViewById(R.id.Headliner);
-		//head.startAnimation(getAnimation(0, -1));
 
-		View leftview = (View) window.findViewById(R.id.guiaButton);
-		//leftview.startAnimation(getAnimation(-1, 0));
-		leftview = (View) window.findViewById(R.id.salirButton);
-		//leftview.startAnimation(getAnimation(-1, 0));
-
-		View rightview = (View) window.findViewById(R.id.abmButton);
-		//rightview.startAnimation(getAnimation(1, 0));
-		rightview = (View) window.findViewById(R.id.informButton);
-		//rightview.startAnimation(getAnimation(1, 0));
-
-		/*final String textVersion = Version.getAppVersion(((OsmandApplication) activity.getApplication()));
-		final TextView textVersionView = (TextView) window.findViewById(R.id.TextVersion);
-		textVersionView.setText(textVersion);
-		final SharedPreferences prefs = activity.getApplicationContext().getSharedPreferences("net.osmand.settings", MODE_WORLD_READABLE);
-		textVersionView.setOnClickListener(new OnClickListener(){
-
-			int i = 0;
-			@Override
-			public void onClick(View v) {
-				if(i++ > 8) {
-					prefs.edit().putBoolean(CONTRIBUTION_VERSION_FLAG, true).commit();
-					enableLink(activity, textVersion, textVersionView);
-				}
-			}
-		});*/
-		/*if (prefs.contains(CONTRIBUTION_VERSION_FLAG)) {
-			enableLink(activity, textVersion, textVersionView);
-		}
-		View helpButton = window.findViewById(R.id.HelpButton);
-		helpButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				TipsAndTricksActivity tactivity = new TipsAndTricksActivity(activity);
-				Dialog dlg = tactivity.getDialogToShowTips(false, true);
-				dlg.show();
-			}
-		});*/
 	}
 
 
@@ -108,8 +50,6 @@ public class MainMenuActivity extends Activity {
 				exit = true;
 			}
 		}
-		//Aca vamos a tener que activar gps y encontrar satelites...
-		//Tirar un cartel diciendo espere hasta que se localice su ubicacion.
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		onCreateMainMenu(getWindow(), this);
@@ -219,8 +159,6 @@ public class MainMenuActivity extends Activity {
 		super.onResume();
 		if (!addPermission(permissionsList, Manifest.permission.INTERNET))
 			permissionsNeeded.add("Internet");
-		/*if (!addPermission(permissionsList, Manifest.permission.READ_CONTACTS))
-			permissionsNeeded.add("Leer contactos");*/
 		if (!addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE))
 			permissionsNeeded.add("Escribir en memoria");
 		if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))

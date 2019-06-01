@@ -50,10 +50,6 @@
             android:label="Seleccionar Lugar" >
         </activity>
 
-        <activity android:name="com.ags.guideme.GuiarMapa"
-            android:screenOrientation="portrait"
-            android:label="Mapa de Guiado" >
-        </activity>
         <activity android:name=".activity.InfActivity"
             android:screenOrientation="portrait"
             android:label="Información"

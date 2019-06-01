@@ -5,7 +5,6 @@ import java.util.*;
 import org.w3c.dom.Document;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.ags.guideme.GuiarMapa;
 import com.ags.guideme.MapaToGuide;
 import com.ags.guideme.R;
 

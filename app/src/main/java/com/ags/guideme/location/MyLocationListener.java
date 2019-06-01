@@ -4,19 +4,9 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
-import com.ags.guideme.GuiarMapa;
 
 
 public class MyLocationListener implements LocationListener {
-	GuiarMapa guiarActivity;
-
-	public GuiarMapa getGuiarActivity() {
-		return guiarActivity;
-	}
-
-	public void setGuiarActivity(GuiarMapa guiarActivity) {
-		this.guiarActivity = guiarActivity;
-	}
 
 	@Override
 	public void onLocationChanged(Location loc) {
@@ -26,7 +16,7 @@ public class MyLocationListener implements LocationListener {
 		// debido a la deteccion de un cambio de ubicacion
 		loc.getLatitude();
 		loc.getLongitude();
-		guiarActivity.setLocation(loc);
+		//guiarActivity.setLocation(loc);
 	}
 
 	@Override

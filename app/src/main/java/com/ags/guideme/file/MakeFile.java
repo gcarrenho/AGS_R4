@@ -24,7 +24,6 @@ public class MakeFile {
 			File file=new File(tarjeta.getAbsolutePath()+"/Android/data/com.ags.guideme/recorridos");
 			boolean success = true;
 			if (!file.exists()) {
-				//Toast.makeText(MainActivity.this, "Directory Does Not Exist, Create It", Toast.LENGTH_SHORT).show();
 				success = file.mkdirs();
 			}
 			file = new File(file+"/", nomarchivo);

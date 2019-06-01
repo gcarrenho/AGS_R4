@@ -57,13 +57,5 @@ public class AgsIntents {
 	public static Class<SeleccionGuiado> getSeleccionGuiado(){
 		return SeleccionGuiado.class;
 	}
-
-	/*public static Class<GuiarMapa> getGuiarMapa(){
-		return GuiarMapa.class;
-	}*/ //Deprecado
-
-	/*public static Class<SalirActivity> getFavoritosActivity(){
-		return SalirActivity.class;
-	}*///deprecadoooo
 	
 }
