@@ -62,6 +62,7 @@ public class GetDirectionsAsyncTask extends AsyncTask<Map<String, String>, Objec
 		{
 			LatLng fromPosition = new LatLng(Double.valueOf(paramMap.get(USER_CURRENT_LAT)) , Double.valueOf(paramMap.get(USER_CURRENT_LONG)));
 			LatLng toPosition = new LatLng(Double.valueOf(paramMap.get(DESTINATION_LAT)) , Double.valueOf(paramMap.get(DESTINATION_LONG)));
+
 			Log.i("Queriendo clacular","");
 
 			GMapV2Direction md = new GMapV2Direction();

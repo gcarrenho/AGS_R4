@@ -139,7 +139,6 @@ public class SelecCityActivity extends Activity{
 		                    int position, long arg) {	         
 		                // Obtengo city
 		                String city = (String) listViewCity.getAdapter().getItem(position);
-		                Toast.makeText(getBaseContext(),"Ciudad "+city, Toast.LENGTH_LONG).show();
 		                final Intent  cat= new Intent(activity, AgsIntents.getSelecCatActivity());
 		                cat.putExtra("boton", "guiar");
 		                cat.putExtra("city", city);

@@ -112,6 +112,8 @@ public class GuiarMapa extends AppCompatActivity implements OnMapReadyCallback,
 		lat = intent.getDoubleExtra("lat", 0.0);//00 valor por defecto si no viene nada
 		lng = intent.getDoubleExtra("lng", 0.0);
 		localidad = intent.getStringExtra("city").toLowerCase();
+		Toast.makeText(getBaseContext(), "latitud: "+lat+" long: "+lng+" local: "+localidad, Toast.LENGTH_LONG)
+				.show();
 		// Creamos el objeto para acceder al servicio de sensores CUANDO TENGA UN MOVIL CON DICHO SENSOR PODRE PROBAR.
 		/*SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
 		List<Sensor> listaSensores = sensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
@@ -258,7 +260,7 @@ public class GuiarMapa extends AppCompatActivity implements OnMapReadyCallback,
 	@Override
 	public void onMapReady(GoogleMap map) {
 		mMap = map;
-		setUpMap();
+		//setUpMap();
 	}
 
 	/**
@@ -402,7 +404,11 @@ public class GuiarMapa extends AppCompatActivity implements OnMapReadyCallback,
 				.show();
 			}
 		}*///else{
-			
+		Toast.makeText(getBaseContext(), "mi ubica "+"mlatitud: "+mlat+" mlong: "+mlng+" local: "+localidad, Toast.LENGTH_LONG)
+				.show();
+
+		Toast.makeText(getBaseContext(), "busca direccion "+"latitud: "+lat+" long: "+lng+" local: "+localidad, Toast.LENGTH_LONG)
+				.show();
 			findDirections(mlat,mlng,lat,lng, GMapV2Direction.MODE_WALKING );
 			colec=0;
 		//}

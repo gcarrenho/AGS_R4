@@ -1,8 +1,7 @@
 package com.ags.guideme;
 
-import android.Manifest;
+
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -13,14 +12,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import android.widget.Toast;
 
@@ -33,8 +26,6 @@ import com.google.android.gms.location.LocationServices;
 
 import com.google.android.gms.location.places.GeoDataClient;
 import com.google.android.gms.location.places.PlaceDetectionClient;
-import com.google.android.gms.location.places.PlaceLikelihood;
-import com.google.android.gms.location.places.PlaceLikelihoodBufferResponse;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -42,8 +33,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -145,13 +134,10 @@ public class MapaToGuide extends AppCompatActivity
                 }
                 Location location = locationResult.getLocations().get(0);
                     // Update UI with location data
-                    // ...
                     Toast.makeText(getBaseContext(), getResources().getString(R.string.ubic) + " " + CurrentLocation(location.getLatitude(), location.getLongitude()), Toast.LENGTH_LONG)
                             .show();
                 if (acces == 1) {
                     setLocation(location);
-                } else {
-
                 }
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                         new LatLng(location.getLatitude(),
@@ -581,10 +567,6 @@ public class MapaToGuide extends AppCompatActivity
         if(i<inst.size()) {
             double currentDistToPoint = this.dist(loc.getLatitude(), loc.getLongitude(), Double.valueOf(inst.get(i).getLat()), Double.valueOf(inst.get(i).getLng()));
             double lastDistLocationKnow=this.dist(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude(), Double.valueOf(inst.get(i).getLat()), Double.valueOf(inst.get(i).getLng()));
-            /*Toast.makeText(getBaseContext(),"Distancia vieja "+lastDistLocationKnow, Toast.LENGTH_LONG)
-                    .show();
-            Toast.makeText(getBaseContext(),"Distancia corriente "+currentDistToPoint, Toast.LENGTH_LONG)
-                    .show();*/
             Log.i("Distancia vieja",String.valueOf(lastDistLocationKnow));
             Log.i("Distancia corriente",String.valueOf(currentDistToPoint));
 

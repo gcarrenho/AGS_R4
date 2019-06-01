@@ -8,24 +8,21 @@ import java.util.Map;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.view.Window;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ListView;
 import android.widget.Toast;
 import android.view.View;
 
 import com.ags.guideme.AgsIntents;
 import com.ags.guideme.ExpandableListAdapter;
 import com.ags.guideme.Lugar;
+import com.ags.guideme.MapaToGuide;
 import com.ags.guideme.R;
 
 public class SelectCatActivity extends Activity {
@@ -213,7 +210,7 @@ public class SelectCatActivity extends Activity {
 						int groupPosition, int childPosition, long id) {
 					String nombre=(String) expListAdapter.getChild(groupPosition, childPosition);
 					//Buscarlo en la base de datos y traer todos los datos.
-					final Intent guiar = new Intent(activity, AgsIntents.getGuiarMapa());
+					final Intent guiar = new Intent(activity, MapaToGuide.class);
 					String nom=(String) expListAdapter.getChild(groupPosition, childPosition);
 					Lugar l=lugarBd.getLugar(nom,ciudad);
 					guiar.putExtra("lat", l.getLatitud());

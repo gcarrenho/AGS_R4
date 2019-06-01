@@ -71,7 +71,7 @@ public class CargarActivity extends Activity implements OnInitListener {
 		//getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		lugarBd = new Lugar(this);
 		lugarBd.open();
-		tts = new TextToSpeech(this, this);
+		//tts = new TextToSpeech(this, this);
 		locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		locListener = new MyLocationListener() {
 			@Override
@@ -287,6 +287,10 @@ public class CargarActivity extends Activity implements OnInitListener {
 				} else {
 					try {
 						String localidad = ObtLocalidad(latitud, longitud).toLowerCase();
+						Toast.makeText(getBaseContext(), "Latitud "+ latitud +" "+"longitud: "+longitud, Toast.LENGTH_LONG)
+								.show();
+						Toast.makeText(getBaseContext(), "Localidad "+ localidad, Toast.LENGTH_LONG)
+								.show();
 						if (lugarBd.ExisteLugar(nombre.getText().toString().toLowerCase(), localidad)) {//true si tiene algo
 							//lanzar un cartel diciendo que ya existe cargado un lugar con dicho nombre poner otro
 							//identificador , y poner  el foco en el campo nombre	

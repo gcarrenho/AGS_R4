@@ -20,10 +20,7 @@ public class AgsIntents {
 	public static Class<AbmActivity> getAbmActivity(){
 		return AbmActivity.class;
 	}
-	
-	public static Class<SalirActivity> getFavoritosActivity(){
-		return SalirActivity.class;
-	}
+
 	
 	public static Class<InfActivity> getInfActivity(){
 		return InfActivity.class;
@@ -39,10 +36,6 @@ public class AgsIntents {
 	
 	public static Class<SelecCityActivity> getSelecCityActivity(){
 		return SelecCityActivity.class;
-	}
-	
-	public static Class<GuiarMapa> getGuiarMapa(){
-		return GuiarMapa.class;
 	}
 	
 	public static Class<AdminActivity> getAdminActivity(){
@@ -64,6 +57,13 @@ public class AgsIntents {
 	public static Class<SeleccionGuiado> getSeleccionGuiado(){
 		return SeleccionGuiado.class;
 	}
-	
+
+	/*public static Class<GuiarMapa> getGuiarMapa(){
+		return GuiarMapa.class;
+	}*/ //Deprecado
+
+	/*public static Class<SalirActivity> getFavoritosActivity(){
+		return SalirActivity.class;
+	}*///deprecadoooo
 	
 }
