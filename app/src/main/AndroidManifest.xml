@@ -97,9 +97,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC4A_1qI9yV6_4XtDwVgwPeQe1_d-m1bF0" />
 
-        <activity
-            android:name="com.ags.guideme.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

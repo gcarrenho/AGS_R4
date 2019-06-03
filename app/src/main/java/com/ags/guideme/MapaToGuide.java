@@ -145,7 +145,6 @@ public class MapaToGuide extends AppCompatActivity
 
             }
 
-            ;
         };
 
     }
@@ -280,8 +279,8 @@ public class MapaToGuide extends AppCompatActivity
         inst= new ArrayList<Instructions>();
         inst=listInst;
         textInst= new String();
-        Log.d(TAG, "Instrucciones originales. "+inst.get(0).getDistance()+" "+getResources().getString(R.string.metros)+" "+Math.round(Integer.parseInt(inst.get(0).getDistance())/0.6));
         fixListInst(inst);
+        Log.i("Intrucciones ",textInst);
         Toast.makeText(getBaseContext(),textInst, Toast.LENGTH_LONG)
                 .show();
     }
@@ -312,7 +311,7 @@ public class MapaToGuide extends AppCompatActivity
                 }
             }
             inst.get(i).setInstruction(newInstr);
-            textInst=textInst+".\n"+inst.get(i).getInstruction()+" a "+inst.get(i).getDistance();
+            textInst=textInst+".\n "+inst.get(i).getInstruction()+" a "+inst.get(i).getDistance();
             i++;
         }
     }
@@ -360,7 +359,24 @@ public class MapaToGuide extends AppCompatActivity
             List<Address> list = geocoder.getFromLocation(lat, logn, 1);
             if (!list.isEmpty()) {
                 Address address = list.get(0);
-                return address.getAddressLine(0);
+                return address.getAddressLine(0).split(",")[0];
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+
+    }
+
+    //metodo que retorna la localidad
+    public String getLocality(Double lat, Double logn) {
+        try {
+            Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+            List<Address> list = geocoder.getFromLocation(lat, logn, 1);
+            if (!list.isEmpty()) {
+                Address address = list.get(0);
+                return address.getLocality();
             }
 
         } catch (IOException e) {

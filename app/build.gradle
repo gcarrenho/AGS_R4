@@ -15,8 +15,8 @@ android {
         applicationId "com.ags.guideme"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 9
+        versionName "2.0.0"
         multiDexEnabled true
     }
     buildTypes {

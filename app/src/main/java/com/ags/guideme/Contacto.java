@@ -85,7 +85,6 @@ public class Contacto implements Serializable{
 	}
 
 	public void actualizaContact(String lname, Contacto c,String tel){
-		//mDb.update(DATABASE_TABLE, values, KEY_NOMBRE+"="+"'"+nombre+"'", null);
 		mDb.execSQL("UPDATE "+ TABLE_CONTACT+" SET "+ KEY_LASTNAME+"="+"'"+ c.getLastname() +
 				"'"+","+ KEY_TEL+"="+"'"+ c.getTel()+"'"+" WHERE "+KEY_LASTNAME+"="+"'"+lname+"' AND "+KEY_TEL+"="+"'"+tel+"'");
 		mDb.close();

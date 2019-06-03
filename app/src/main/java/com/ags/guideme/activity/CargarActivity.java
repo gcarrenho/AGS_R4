@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 
 import android.Manifest;
@@ -16,6 +17,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.preference.Preference;
@@ -343,7 +345,7 @@ public class CargarActivity extends Activity implements OnInitListener {
 				lugarBd.setLongitud(lon);
 				lugarBd.setLocalidad(localidad);
 				String telefono = tel.getText().toString().replace(" ", "");
-				;//El tel va a ser dictado eliminar espacios en blanco.
+				//El tel va a ser dictado eliminar espacios en blanco.
 				if (telefono.isEmpty()) {
 					telefono = "0";
 				}
@@ -553,5 +555,14 @@ public class CargarActivity extends Activity implements OnInitListener {
 			e.printStackTrace();
 		}
 		return address.getLocality();
+	}
+
+	class Task1 extends AsyncTask<Map<String, String>, Object, ArrayList> {
+
+
+		@Override
+		protected ArrayList doInBackground(Map<String, String>... maps) {
+			return null;
+		}
 	}
 }

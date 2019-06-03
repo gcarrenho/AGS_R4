@@ -20,9 +20,6 @@ public class AbmActivity extends Activity implements Preference.OnPreferenceClic
 
     public static final String APP_EXIT_KEY = "APP_EXIT_KEY";
     private Preference about;
-    private LocationManager locManager;
-    private MyLocationListener locListener;
-    private SalirActivity s = new SalirActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
