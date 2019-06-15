@@ -279,6 +279,7 @@ public class MapaToGuide extends AppCompatActivity
         inst= new ArrayList<Instructions>();
         inst=listInst;
         textInst= new String();
+        Log.d(TAG, "Instrucciones originales. "+inst.get(0).getDistance()+" "+getResources().getString(R.string.metros)+" "+Math.round(Integer.parseInt(inst.get(0).getDistance())/0.6));
         fixListInst(inst);
         Log.i("Intrucciones ",textInst);
         Toast.makeText(getBaseContext(),textInst, Toast.LENGTH_LONG)
